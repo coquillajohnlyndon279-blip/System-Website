@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologic Launch Countdown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #091224, #0f2027, #203a43);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Ambient Glow effects background */
+        .ambient-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 212, 255, 0.15);
+            filter: blur(150px);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .glow-1 { top: -10%; left: 10%; }
+        .glow-2 { bottom: -10%; right: 10%; }
+
+        main {
+            z-index: 2;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        /* Rocket container */
+        .rocket-box {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: #00d4ff;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .countdown-title {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: #a0aec0;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #cbd5e0;
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        /* Grid for modern countdown boxes */
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+        }
+
+        @media (max-width: 480px) {
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 { font-size: 2.2rem; }
+        }
+
+        .time-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .time-val {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .time-lbl {
+            font-size: 0.75rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .launch-date-badge {
+            background: #1a202c;
+            border: 1px solid #2d3748;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #e2e8f0;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00e676;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.4; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.4; }
+        }
+
+        footer {
+            font-size: 0.85rem;
+            color: #4a5568;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <main>
+        <div class="rocket-box">🚀</div>
+        <div class="brand-name">Technologic</div>
+        
+        <div class="countdown-title">The Countdown Is On</div>
+        <h1>WE'RE LAUNCHING SOON.</h1>
+        <p class="description">A new way to build smarter business systems is almost here. Get ready for the Technologic System Landing Page launch.</p>
+
+        <div class="launch-date-badge">
+            <span class="status-dot"></span>
+            LAUNCH DAY: November 21, 2026 - Philippines Time
+        </div>
+
+        <div class="countdown-grid">
+            <div class="time-card">
+                <span class="time-val" id="d-val">21</span>
+                <span class="time-lbl">Days</span>
+            </div>
+            <div class="time-card">
+                <span class="time-val" id="h-val">07</span>
+                <span class="time-lbl">Hours</span>
+            </div>
+            <div class="time-card">
+                <span class="time-val" id="m-val">49</span>
+                <span class="time-lbl">Minutes</span>
+            </div>
+            <div class="time-card">
+                <span class="time-val" id="s-val">36</span>
+                <span class="time-lbl">Seconds</span>
+            </div>
+        </div>
+
+        <footer>We Build • We Innovate • We Adapt</footer>
+    </main>
+
+    <script>
+        // Eksaktong target: November 21, 2026 Philippine Time
+        const targetTime = new Date("November 21, 2026 00:00:00").getTime();
+
+        const runCountdown = setInterval(function() {
+            const currentTime = new Date().getTime();
+            const timeLeft = targetTime - currentTime;
+
+            const d = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const h = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("d-val").textContent = d < 10 ? "0" + d : d;
+            document.getElementById("h-val").textContent = h < 10 ? "0" + h : h;
+            document.getElementById("m-val").textContent = m < 10 ? "0" + m : m;
+            document.getElementById("s-val").textContent = s < 10 ? "0" + s : s;
+
+            if (timeLeft < 0) {
+                clearInterval(runCountdown);
+                document.querySelector(".countdown-grid").innerHTML = "<div class='time-card' style='grid-column: 1/-1; padding: 25px;'><span class='time-val' style='font-size:2rem;'>WE ARE LIVE!</span></div>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+Compose
+Write to John Lyndon Lacerna
+
+
 
