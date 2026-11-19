@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologic Launch Countdown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #001c3d;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            z-index: 2;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        /* Logo Area Layout */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        /* Custom Rocket Logo Animation */
+        .custom-logo {
+            width: 75px;
+            height: 75px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .brand-name {
+            font-size: 3.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .countdown-title {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: #a0aec0;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        .description {
+            color: #cbd5e0;
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        /* Countdown Grid Display */
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+        }
+
+        @media (max-width: 580px) {
+            .logo-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 { font-size: 2rem; }
+            .brand-name { font-size: 2.5rem; }
+        }
+
+        .time-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .time-val {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .time-lbl {
+            font-size: 0.75rem;
+            color: #a0aec0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .launch-date-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #e2e8f0;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00e676;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.4; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.4; }
+        }
+
+        footer {
+            font-size: 0.85rem;
+            color: #a0aec0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="logo-container">
+            <!-- SVG Vector Graphic for the Technologic Rocket and Orbit Ring -->
+            <svg class="custom-logo" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <path d="M 15,65 C 10,50 30,35 65,30 C 90,28 95,45 65,55 C 40,62 20,70 15,65 Z" stroke="#ffffff" stroke-width="4.5" fill="none" opacity="0.95"/>
+                <path d="M 32,68 C 42,52 55,38 75,25 C 62,45 48,58 32,68 Z" fill="#ffffff"/>
+                <path d="M 75,25 C 65,28 46,40 40,55 C 45,61 58,55 75,25 Z" fill="#ffffff"/>
+                <path d="M 28,58 L 18,63 L 26,67 Z" fill="#ffffff"/>
+                <path d="M 44,72 L 40,82 L 34,71 Z" fill="#ffffff"/>
+                <path d="M 21,74 Q 15,79 23,81 Q 26,75 21,74 Z" fill="#ffffff"/>
+            </svg>
+            <div class="brand-name">Technologic</div>
+        </div>
+        
+        <div class="countdown-title">The Countdown Is On</div>
+        <h1>WE'RE LAUNCHING SOON.</h1>
+        <p class="description">A new way to build smarter business systems is almost here. Get ready for the Technologic System Landing Page launch.</p>
+
+        <div class="launch-date-badge">
+            <span class="status-dot"></span>
+            LAUNCH DAY: November 21, 2026 - Philippines Time
+        </div>
+
+        <div class="countdown-grid">
+            <div class="time-card">
+                <span class="time-val" id="d-val">00</span>
+                <span class="time-lbl">Days</span>
+            </div>
+            <div class="time-card">
+                <span class="time-val" id="h-val">00</span>
+                <span class="time-lbl">Hours</span>
+            </div>
+            <div class="time-card">
+                <span class="time-val" id="m-val">00</span>
+                <span class="time-lbl">Minutes</span>
+            </div>
+            <div class="time-card">
+                <span class="time-val" id="s-val">00</span>
+                <span class="time-lbl">Seconds</span>
+            </div>
+        </div>
+
+        <footer>We Build • We Innovate • We Adapt</footer>
+    </main>
+
+    <script>
+        // Set target date to November 21, 2026
+        const targetTime = new Date("November 21, 2026 00:00:00").getTime();
+
+        const runCountdown = setInterval(function() {
+            const currentTime = new Date().getTime();
+            const timeLeft = targetTime - currentTime;
+
+            // Calculate calculations for Days, Hours, Minutes, and Seconds
+            const d = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const h = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Display values inside HTML elements
+            document.getElementById("d-val").textContent = d < 10 ? "0" + d : d;
+            document.getElementById("h-val").textContent = h < 10 ? "0" + h : h;
+            document.getElementById("m-val").textContent = m < 10 ? "0" + m : m;
+            document.getElementById("s-val").textContent = s < 10 ? "0" + s : s;
+
+            // Handle action when countdown completes
+            if (timeLeft < 0) {
+                clearInterval(runCountdown);
+                document.querySelector(".countdown-grid").innerHTML = "<div class='time-card' style='grid-column: 1/-1; padding: 25px;'><span class='time-val' style='font-size:2rem;'>WE ARE LIVE!</span></div>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
 
